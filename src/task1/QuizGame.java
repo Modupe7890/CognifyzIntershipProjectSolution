@@ -23,5 +23,7 @@ public class QuizGame {
                 {"a) 365", "b) 367", "c) 366", "d) 400"},
                 {"a) 23", "b) 13", "c) 12", "d) 10"},
         };
+//Array of correct answers
+        char[] answers = {'c', 'c', 'a', 'a', 'b'};
     }
 }
