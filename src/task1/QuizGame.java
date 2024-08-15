@@ -33,5 +33,10 @@ public class QuizGame {
             }
             System.out.print("Choose the correct option (a,b,c,d): ");
             char Answer = scanner.next().toLowerCase().charAt(0);
+
+            if (Answer == answers[i]) {
+                System.out.println("Correct!\n");
+                score++;
+            } else {
     }
 }
