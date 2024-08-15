@@ -38,5 +38,8 @@ public class QuizGame {
                 System.out.println("Correct!\n");
                 score++;
             } else {
+                System.out.println("Wrong! The correct answer was " + answers[i] + ".\n");
+            }
+            }
     }
 }
