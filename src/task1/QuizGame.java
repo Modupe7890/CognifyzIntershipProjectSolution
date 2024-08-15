@@ -23,7 +23,13 @@ public class QuizGame {
                 {"a) 365", "b) 367", "c) 366", "d) 400"},
                 {"a) 23", "b) 13", "c) 12", "d) 10"},
         };
-//Array of correct answers
-        char[] answers = {'c', 'c', 'a', 'a', 'b'};
+            //Array of correct answers
+         char[] answers = {'c', 'c', 'a', 'a', 'b'};
+        int score = 0;
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            for (String option : options[i]) {
+                System.out.println(option);
+            }
     }
 }
