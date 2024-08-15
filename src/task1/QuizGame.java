@@ -31,5 +31,7 @@ public class QuizGame {
             for (String option : options[i]) {
                 System.out.println(option);
             }
+            System.out.print("Choose the correct option (a,b,c,d): ");
+            char Answer = scanner.next().toLowerCase().charAt(0);
     }
 }
