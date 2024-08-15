@@ -40,6 +40,7 @@ public class QuizGame {
             } else {
                 System.out.println("Wrong! The correct answer was " + answers[i] + ".\n");
             }
-            }
+        }
+        System.out.println("Thank You, The Quiz is Over! Total Score is: " + score + "/" + questions.length);
     }
 }
