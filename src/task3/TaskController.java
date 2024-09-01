@@ -18,6 +18,18 @@ public class TaskController {
 
             int choice = input.nextInt();
 
+            switch (choice) {
+                case 1:
+                    System.out.println("To create a task input the following");
+                    System.out.println("----------------------");
+                    System.out.println("Input the title of task");
+                    String title = input.next();
+                    System.out.println("Input the title of description");
+                    String description = input.next();
+                    taskService.createTask(title, description);
+                    break;
+            }
+
         }
 
     }
