@@ -32,4 +32,15 @@ public class TaskService {
             }
         }
         System.out.println("Task not found");
+    }
+        public void deleteTask(int id){
+            for(Task task : tasks){
+                if(task.getId() == id){
+                    tasks.remove(task);
+                    System.out.println("Task deleted successfully");
+                    return;
+                }
+            }
+            System.out.println("Task not found");
+        }
 }
