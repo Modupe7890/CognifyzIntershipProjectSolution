@@ -40,6 +40,11 @@ public class TaskController {
                     String newDescription = input.next();
                     taskService.updateTask(updateId, newTitle, newDescription);
                     break;
+                case 4:
+                    System.out.print("Enter task ID to delete: ");
+                    int deleteId = input.nextInt();
+                    taskService.deleteTask(deleteId);
+                    break;
             }
 
         }
