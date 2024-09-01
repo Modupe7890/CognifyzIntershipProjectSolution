@@ -45,6 +45,11 @@ public class TaskController {
                     int deleteId = input.nextInt();
                     taskService.deleteTask(deleteId);
                     break;
+                case 5:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
             }
 
         }
