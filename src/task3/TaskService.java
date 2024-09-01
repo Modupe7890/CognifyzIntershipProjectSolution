@@ -22,4 +22,14 @@ public class TaskService {
             }
         }
     }
+    public void updateTask(int id, String newTitle, String newDescription) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                task.setTitle(newTitle);
+                task.setDescription(newDescription);
+                System.out.println("Task updated Successfully");
+                return;
+            }
+        }
+        System.out.println("Task not found");
 }
