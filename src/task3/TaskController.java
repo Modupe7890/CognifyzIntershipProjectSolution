@@ -31,6 +31,15 @@ public class TaskController {
                 case 2:
                     taskService.readTasks();
                     break;
+                case 3:
+                    System.out.print("Enter task ID to update: ");
+                    int updateId = input.nextInt();
+                    System.out.print("Enter new title: ");
+                    String newTitle = input.next();
+                    System.out.print("Enter new description: ");
+                    String newDescription = input.next();
+                    taskService.updateTask(updateId, newTitle, newDescription);
+                    break;
             }
 
         }
