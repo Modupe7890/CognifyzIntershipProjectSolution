@@ -17,5 +17,13 @@ public class TemperatureConverter {
         System.out.println("1. Fahrenheit to Celsius: ");
         System.out.println("2. Celsius to Fahrenheit: ");
 
+        int Option = input.nextInt();
+        double convertedTemp;
+        switch (Option){
+            case 1:
+                convertedTemp = fahrenheitToCelsius(temp);
+                System.out.println("Your temperature " +temp+ "°F has been converted to " + convertedTemp+ "°C");
+                break;
+
     }
 }
