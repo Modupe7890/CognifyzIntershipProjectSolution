@@ -32,6 +32,8 @@ public class TemperatureConverter {
             default:
                 System.out.println("Invalid Option");
         }
-
+    }
+    public static double fahrenheitToCelsius (double fahrenheit){
+        return  (fahrenheit - 32) * 9/5;
     }
 }
