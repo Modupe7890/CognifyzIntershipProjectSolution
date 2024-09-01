@@ -28,6 +28,9 @@ public class TaskController {
                     String description = input.next();
                     taskService.createTask(title, description);
                     break;
+                case 2:
+                    taskService.readTasks();
+                    break;
             }
 
         }
