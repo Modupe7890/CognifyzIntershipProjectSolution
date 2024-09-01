@@ -19,11 +19,19 @@ public class TemperatureConverter {
 
         int Option = input.nextInt();
         double convertedTemp;
-        switch (Option){
+        switch (Option) {
             case 1:
                 convertedTemp = fahrenheitToCelsius(temp);
-                System.out.println("Your temperature " +temp+ "°F has been converted to " + convertedTemp+ "°C");
+                System.out.println("Your temperature " + temp + "°F has been converted to " + convertedTemp + "°C");
                 break;
+            case 2:
+                convertedTemp = celsiusToFahrenheit(temp);
+                System.out.println("Your temperature " + temp + "°C has been converted to "
+                        + convertedTemp + "°F");
+                break;
+            default:
+                System.out.println("Invalid Option");
+        }
 
     }
 }
