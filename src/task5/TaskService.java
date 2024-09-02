@@ -13,5 +13,7 @@ public class TaskService {
         System.out.println(tasks.get(0));
         System.out.println("Task created successfully!");
     }
+    public void readTasks(){
+        readTasksFromFile();
 
 }
