@@ -28,4 +28,14 @@ public class TaskService {
         }
         System.out.println("Task not found");
     }
+    public void deleteTask(int id){
+        for(task3.Task task : tasks){
+            if(task.getId() == id){
+                tasks.remove(task);
+                saveTasksToFile(tasks);
+                System.out.println("Task deleted successfully");
+                return;
+            }
+        }
+        System.out.println("Task not found");
 }
