@@ -9,6 +9,7 @@ public class TemperatureConverter {
 
         System.out.println("Please kindly read through and follow the instructions.");
         System.out.println("-------------------------------------------------------");
+        System.out.println();
 
         System.out.println("Please enter your Temperature: ");
         double temp = input.nextDouble();
