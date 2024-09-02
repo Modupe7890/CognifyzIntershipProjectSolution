@@ -1,5 +1,8 @@
 package task5;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +31,9 @@ public class TaskService {
         }
         System.out.println("Task not found");
     }
-    public void deleteTask(int id){
-        for(task3.Task task : tasks){
-            if(task.getId() == id){
+    public void deleteTask(int id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
                 tasks.remove(task);
                 saveTasksToFile(tasks);
                 System.out.println("Task deleted successfully");
@@ -38,4 +41,16 @@ public class TaskService {
             }
         }
         System.out.println("Task not found");
+    }
+    public void saveTasksToFile(List<task3.Task> tasks) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/task3/task.txt"))) {
+            for (task3.Task task : tasks) {
+                writer.write(task.toString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving tasks to file.");
+            e.printStackTrace();
+        }
+    }
 }
