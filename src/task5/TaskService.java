@@ -13,7 +13,19 @@ public class TaskService {
         System.out.println(tasks.get(0));
         System.out.println("Task created successfully!");
     }
-    public void readTasks(){
+    public void readTasks() {
         readTasksFromFile();
-
+    }
+    public void updateTask(int id, String newTitle, String newDescription) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                task.setTitle(newTitle);
+                task.setDescription(newDescription);
+                saveTasksToFile(tasks);
+                System.out.println("Task updated Successfully");
+                return;
+            }
+        }
+        System.out.println("Task not found");
+    }
 }
