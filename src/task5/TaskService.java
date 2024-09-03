@@ -1,8 +1,6 @@
 package task5;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +8,7 @@ public class TaskService {
     private final List<Task> tasks = new ArrayList();
 
     public void createTask(String title, String description) {
-        task3.Task newTask = new task3.Task(tasks.size() + 1, title, description);
+        task5.Task newTask = new task5.Task(tasks.size() + 1, title, description);
         tasks.add(newTask);
         saveTasksToFile(tasks);
         System.out.println(tasks.get(0));
@@ -20,7 +18,7 @@ public class TaskService {
         readTasksFromFile();
     }
     public void updateTask(int id, String newTitle, String newDescription) {
-        for (Task task : tasks) {
+        for (task5.Task task : tasks) {
             if (task.getId() == id) {
                 task.setTitle(newTitle);
                 task.setDescription(newDescription);
@@ -32,7 +30,7 @@ public class TaskService {
         System.out.println("Task not found");
     }
     public void deleteTask(int id) {
-        for (Task task : tasks) {
+        for (task5.Task task : tasks) {
             if (task.getId() == id) {
                 tasks.remove(task);
                 saveTasksToFile(tasks);
@@ -42,14 +40,25 @@ public class TaskService {
         }
         System.out.println("Task not found");
     }
-    public void saveTasksToFile(List<task3.Task> tasks) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/task3/task.txt"))) {
-            for (task3.Task task : tasks) {
+    public void saveTasksToFile(List<task5.Task> tasks) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/task5/task.txt"))) {
+            for (task5.Task task : tasks) {
                 writer.write(task.toString());
                 writer.newLine();
             }
         } catch (IOException e) {
             System.out.println("An error occurred while saving tasks to file.");
+            e.printStackTrace();
+        }
+    }
+    public void readTasksFromFile() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/task5/task.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading tasks from file.");
             e.printStackTrace();
         }
     }
